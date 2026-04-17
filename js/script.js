@@ -434,25 +434,48 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-const gallery = document.querySelector('.hover-gallery');
-const items = document.querySelectorAll('.gallery-item');
+const items = document.querySelectorAll('.item');
 
 items.forEach(item => {
     item.addEventListener('mouseenter', () => {
 
-        // set state
-        gallery.classList.add('has-active');
+        const first = item.getBoundingClientRect();
 
-        // remove old active
+        // reset others
         items.forEach(i => i.classList.remove('active'));
 
-        // set new active
+        // activate
         item.classList.add('active');
+
+        // grow to center
+        item.style.top = "50%";
+        item.style.left = "50%";
+        item.style.width = "300px";
+        item.style.height = "400px";
+        item.style.transform = "translate(-50%, -50%)";
+
+        const last = item.getBoundingClientRect();
+
+        const dx = first.left - last.left;
+        const dy = first.top - last.top;
+        const dw = first.width / last.width;
+        const dh = first.height / last.height;
+
+        item.animate([
+            {
+                transform: `translate(${dx}px, ${dy}px) scale(${dw}, ${dh})`
+            },
+            {
+                transform: "translate(-50%, -50%) scale(1,1)"
+            }
+        ], {
+            duration: 500,
+            easing: "cubic-bezier(0.77, 0, 0.175, 1)"
+        });
+
     });
 
     item.addEventListener('mouseleave', () => {
-        items.forEach(i => i.classList.remove('active'));
-        gallery.classList.remove('has-active');
+        location.reload(); // quick reset (simpelste manier)
     });
 });

@@ -50,121 +50,39 @@
             </div>
         </div>
 
-        <div class="hover-gallery">
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 1</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 2</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 3</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 4</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 5</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 6</h3>
-            </div>
-
-            <div class="gallery-item" style="background-image:url('assets/reis.png')" data-fullimage="assets/reis.HEIC">
-                <h3>Project 7</h3>
-            </div>
-
+        <div>
+            <h1 class="titel-paginareis">Reizen</h1>
+            <p class="p-reis">Op mijn 19e ben ik begonnen met reizen en maakte ik mijn eerste grote reis: een tocht door
+                Zuid-Amerika.
+                Ik bezocht onder andere Brazilië, Peru, Ecuador en Colombia. Tijdens deze reis heb ik veel
+                levenservaring opgedaan en mezelf op een andere manier leren kennen, doordat ik continu werd
+                geconfronteerd met nieuwe culturen, mensen en situaties.
+            </p>
         </div>
 
-        <div class="gallery-lightbox" id="galleryLightbox">
-            <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-            <div class="lightbox-content">
-                <img id="lightboxImage" src="" alt="Gallery image">
-                <button class="lightbox-close" id="lightboxClose">×</button>
-            </div>
+        <div class="gallery">
+            <div class="item one" style="background-image: url('assets/brazilie.png');" data-text="Brazilië"></div>
+            <div class="item two" style="background-image: url('assets/peru.png');" data-text="Peru"></div>
+            <div class="item three" style="background-image: url('assets/ecuador.png');" data-text="Equador"></div>
+            <div class="item four" style="background-image: url('assets/colombia.png');" data-text="Colombia"></div>
+            <div class="item five" style="background-image: url('assets/malta.png');" data-text="Malta"></div>
+            <div class="item six" style="background-image: url('assets/egypte.png');" data-text="Egypte"></div>
+            <div class="item seven" style="background-image: url('assets/thailand.png');" data-text="Thailand"></div>
         </div>
 
-        <script>
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.getElementById('galleryLightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxClose = document.getElementById('lightboxClose');
-            const lightboxBackdrop = document.getElementById('lightboxBackdrop');
-            let hoveringItem = false;
-            let hoveringLightbox = false;
+        <p class="p-reis">
 
-            galleryItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    hoveringItem = true;
-                    const fullImageUrl = item.getAttribute('data-fullimage');
-                    lightboxImage.src = fullImageUrl;
-                    lightbox.classList.add('active');
-                });
+            In de jaren daarna ben ik blijven reizen, onder andere naar Malta, Egypte en Thailand. Elke bestemming
+            gaf me nieuwe inzichten en versterkte mijn nieuwsgierigheid naar hoe mensen leven en denken in andere
+            delen van de wereld. Reizen is voor mij meer dan verplaatsen; het is observeren, leren en je perspectief
+            blijven verbreden.
 
-                item.addEventListener('mouseleave', () => {
-                    hoveringItem = false;
-                    if (!hoveringLightbox) {
-                        lightbox.classList.remove('active');
-                    }
-                });
-            });
+            Ik merk dat deze ervaringen mij sterk hebben gevormd als persoon en als maker. De manier waarop ik kijk,
+            onderzoek en werk is direct beïnvloed door de landen en culturen die ik heb mogen ontdekken.</p>
 
-            lightbox.addEventListener('mouseenter', () => {
-                hoveringLightbox = true;
-            });
 
-            lightbox.addEventListener('mouseleave', () => {
-                hoveringLightbox = false;
-                if (!hoveringItem) {
-                    lightbox.classList.remove('active');
-                }
-            });
 
-            lightboxClose.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-                hoveringItem = false;
-                hoveringLightbox = false;
-            });
 
-            lightboxBackdrop.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-                hoveringItem = false;
-                hoveringLightbox = false;
-            });
-        </script>
-
-        <div class="about-content">
-            <div class="about-image">
-                <img src="assets/boris.jpeg" alt="Foto van Boris" class="about-photo">
-            </div>
-            <div class="about-copy">
-                <h1>Wie ben ik</h1>
-                <p>Ik ben Boris, 23 jaar en woon in Maastricht. Ik ben een nieuwsgierige en veelzijdige maker met een
-                    brede interesse in design, muziek en visuele media. In mijn werk combineer ik creativiteit met een
-                    doordachte aanpak: ik observeer, analyseer en vertaal ideeën naar sterke visuele en audiovisuele
-                    concepten.
-                </p>
-
-                <p>
-                    Mijn kracht ligt in het verbinden van verschillende disciplines, van design tot foto, video en
-                    interactieve media. Ik werk conceptueel, maar zorg er ook voor dat ideeën ook echt tot leven komen.
-                    In samenwerkingen breng ik energie, denk ik actief mee en draag ik bij aan een open en creatieve
-                    sfeer.
-
-                </p>
-
-                <p> Ik streef ernaar om werk te maken dat niet alleen visueel sterk is, maar ook gevoel en beleving
-                    overbrengt. Daarbij blijf ik mezelf continu ontwikkelen en uitdagen, met als doel om te groeien als
-                    creatieve professional.
-                </p>
-            </div>
-        </div>
     </main>
     </main>
 
@@ -172,6 +90,8 @@
         <p><strong>Contact:</strong> boris@example.com</p>
         <p>Samenwerken? Koffie doen? Maak een afspraak.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
