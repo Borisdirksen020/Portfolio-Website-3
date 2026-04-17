@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENERATIVE ART</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="index.html" class="brand"><img src="assets/logo-boris.png" alt="Boris Dirksen" class="logo-bd"></a>
+        <h1 class="brand">Boris Dirksen</h1>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="muziek.html">Muziek</a>
+            <a href="over.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <main class="project-detail-page">
+        <section class="project-detail-header">
+            <a class="back-link" href="javascript:history.back()"><img src="assets/terugknop.png" alt="" class="terugknop"></a>
+            <h1 class="titel-pagina">Generative Art voor live performance Band</h1>
+        </section>
+
+
+        <div class="project-detail-grid">
+            <div class="project-detail-copy">
+                <h2>Oriëntatie</h2>
+                <p>
+                    Het project begon met het kiezen van een band en een nummer als basis voor de visuele vertaling. In
+                    mijn geval werd dit de Maastrichtse band Düüster met het nummer Cupids Blind Eye.
+                </p>
+
+                <p> Door het nummer herhaaldelijk te luisteren heb ik de structuur, sfeer en dynamiek geanalyseerd.
+                    Hierbij keek ik niet alleen naar het ritme, maar ook naar spanningsopbouw, intensiteit en emotie.
+                    Dit vormde de basis voor de visuele richting van het project.
+                </p>
+            </div>
+
+            <div class="project-detail-images">
+                <img src="assets/duuster.webp" alt="" class="artikel-image-2 ">
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h2>Concept & Schetsfase</h2>
+            <p>Op basis van deze analyse ben ik begonnen met het ontwikkelen van visuele ideeën. In deze fase heb ik
+                verschillende richtingen verkend door te schetsen in Illustrator en Photoshop.
+
+                Het doel was om abstracte elementen zoals geluid en ritme te vertalen naar vormen, beweging en
+                compositie. Hierbij heb ik geëxperimenteerd met contrast, herhaling en dynamiek, zodat de visuals goed
+                aansluiten bij de energie van het nummer.
+
+                Deze fase was essentieel om snel ideeën te testen en een duidelijke visuele stijl te bepalen voordat ik
+                de stap naar code maakte.</p>
+        </div>
+
+
+        <div class="project-detail-grid">
+            <div class="project-detail-images">
+                <img src="assets/oog1.png" alt="" class="artikel-image-2 ">
+            </div>
+            <div class="project-detail-copy">
+                <h2>Ontwikkeling</h2>
+                <p>
+                    Na de conceptfase heb ik de visuele ideeën vertaald naar werkende generatieve systemen in Processing
+                    en p5.js.
+
+                    Hierbij heb ik gewerkt met real-time audio-analyse, waardoor de visuals direct reageren op de
+                    muziek.
+                </p>
+
+                <p>Elementen zoals frequentie, volume en ritme werden gebruikt als input voor beweging, vorm en kleur.
+
+                    Het ontwikkelen van deze systemen vroeg om een iteratief proces: testen, aanpassen en verfijnen. Zo
+                    ontstonden visuals die niet alleen technisch werkten, maar ook visueel in balans waren met de
+                    muziek.</p>
+
+            </div>
+
+        </div>
+
+        <div class="text-section">
+            <h2>Interactie & Live Performance</h2>
+            <p>In de laatste fase heb ik de visuals gekoppeld aan een Arduino, waardoor externe input kon worden
+                toegevoegd tijdens het optreden. Dit maakte het mogelijk om de visuals nog dynamischer en interactiever
+                te maken in een live setting.
+
+                Tijdens het optreden vormden de visuals een directe reactie op zowel de muziek als de live input. Dit
+                zorgde voor een sterkere wisselwerking tussen beeld en geluid, en creëerde een immersieve ervaring voor
+                het publiek.
+
+                Hier werd duidelijk hoe belangrijk timing, stabiliteit en samenwerking zijn binnen een live performance.
+            </p>
+        </div>
+
+        <div class="project-detail-grid">
+            <div class="project-detail-copy">
+                <h2>Reflectie</h2>
+                <p>
+                    Dit project gaf mij inzicht in het ontwerpen van generatieve systemen en het werken met real-time
+                    data. Ik heb geleerd hoe je abstracte input, zoals geluid en ritme, kunt vertalen naar visuele
+                    output die daadwerkelijk iets toevoegt aan een performance.
+                </p>
+
+                <p> Daarnaast liet het project zien hoe belangrijk het is om concept, techniek en uitvoering op elkaar
+                    af te stemmen. Niet alleen het idee, maar juist de vertaalslag naar een werkend systeem bepaalt de
+                    kwaliteit van het eindresultaat.
+                </p>
+            </div>
+
+            <div class="project-detail-images">
+                <img src="assets/ogen.png" alt="" class="artikel-image-1 ">
+
+            </div>
+        </div>
+        <h2 class="titel-video">Check de video!</h2>
+        <div class="video-player-container" id="videoContainer">
+            <video class="video-player" id="videoPlayer" controls>
+                <source src="assets/genartvideo.mp4" type="video/mp4">
+                Je browser ondersteunt video playback niet.
+            </video>
+            <button class="video-play-btn" id="playBtn"></button>
+        </div>
+        <script>
+            const videoPlayer = document.getElementById('videoPlayer');
+            const playBtn = document.getElementById('playBtn');
+            const videoContainer = document.getElementById('videoContainer');
+            
+            if (playBtn) {
+                playBtn.addEventListener('click', () => {
+                    videoPlayer.play();
+                    playBtn.style.display = 'none';
+                });
+                
+                videoPlayer.addEventListener('play', () => {
+                    playBtn.style.display = 'none';
+                });
+                
+                videoPlayer.addEventListener('pause', () => {
+                    playBtn.style.display = 'flex';
+                });
+            }
+        </script>
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Contact:</strong> boris@example.com</p>
+        <p>Samenwerken? Koffie doen? Maak een afspraak.</p>
+    </footer>
+</body>
+
+</html>
